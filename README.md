@@ -1,39 +1,89 @@
 # Airline-Booking-System
 
-## 📌 Project Overview
-This repository contains a lightweight, terminal-based **Booking and Management System** implemented in C++. The application provides an all-in-one console environment to handle user profiles, manage reservations, process simulated transactions, and present structured menus using customized terminal text formatting.
+A console-based airline reservation system developed in C++. The system enables users to register accounts, manage flight bookings, perform payments, complete passenger check-in, and generate invoices through an integrated workflow.
 
----
+## Features
 
-## 🚀 Key Features
+- User registration and login authentication
+- Flight booking management
+- Booking modification and updates
+- Payment processing
+- Passenger check-in
+- Invoice generation
+- Input validation for user and booking information
+- File-based data storage
 
-* **User Authentication:** Secure registration and login flow for multiple user accounts (`readUser`, `login`, `Registration`).
-* **Booking Engine:** Complete capability to create (`performBooking`), view (`readBooking`), and modify (`editBooking`) reservation logs.
-* **Payment Processing Module:** Integrated step-by-step module to finalize and process transactions safely (`payment`).
-* **Custom Terminal UI:** Enhanced terminal aesthetics featuring custom-drawn title screens and multi-color ANSI text formatting (`printBlue`, `printPink`).
+## Technologies Used
 
----
+- C++
+- Standard Template Library (STL)
+- File Handling
+- Structured Programming
+- Windows Console API
 
-## 🛠️ System Architecture
-
-The software is structured into four main components to keep the console architecture modular and efficient:
+## Project Structure
 
 ```text
-┌───────────────────────────────────────┐
-│        Application Entry (main)       │
-└───────────────────┬───────────────────┘
-                    ▼
-┌───────────────────────────────────────┐
-│         Authentication Module         │
-│     (Registration & Secure Login)     │
-└───────────────────┬───────────────────┘
-                    ▼
-┌───────────────────────────────────────┐
-│            Core Operations            │
-│  (Booking, Modifications, Payments)   │
-└───────────────────┬───────────────────┘
-                    ▼
-┌───────────────────────────────────────┐
-│         Utility & UI Styling          │
-│     (ANSI Rendering & Persistence)    │
-└───────────────────────────────────────┘
+airline.cpp
+user.txt
+<username>_Booking.txt
+<username>_paymentCheckIn.txt
+<username>_invoice.txt
+```
+
+## Getting Started
+
+### Prerequisites
+
+- Windows Operating System
+- C++ Compiler (GCC, MinGW, Visual Studio, or equivalent)
+
+### Compilation
+
+```bash
+g++ airline.cpp -o airline
+```
+
+### Run
+
+```bash
+./airline
+```
+
+## System Workflow
+
+```text
+Register / Login
+       ↓
+Book Flight
+       ↓
+Make Payment
+       ↓
+Check-In
+       ↓
+Generate Invoice
+```
+
+## Data Storage
+
+The system stores data using text files:
+
+| File | Description |
+|--------|-------------|
+| user.txt | User account information |
+| username_Booking.txt | Flight booking records |
+| username_paymentCheckIn.txt | Payment and check-in information |
+| username_invoice.txt | Generated invoices |
+
+## Validation
+
+The system includes validation for:
+
+- Email addresses
+- Password strength
+- Mobile phone numbers
+- Dates
+- Passport numbers
+- Credit/Debit card information
+- Payment security codes
+
